@@ -14,7 +14,9 @@ else
    builder.Services.AddDbContext<MvcMovieContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("ProductionMvcMovieContext")));
 }
+//Register validation services with dependency injection:
 
+builder.Services.AddValidation();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
