@@ -182,5 +182,7 @@ public async Task<IActionResult> Index(string movieGenre, string searchString)
         {
             return _context.Movie.Any(e => e.Id == id);
         }
+
+        
     }
 }
