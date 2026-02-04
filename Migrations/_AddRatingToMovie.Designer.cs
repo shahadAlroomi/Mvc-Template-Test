@@ -11,8 +11,8 @@ using MvcMovie.Data;
 namespace MvcTemplate.Migrations
 {
     [DbContext(typeof(MvcMovieContext))]
-    [Migration("_InitialCreate")]
-    partial class InitialCreate
+    [Migration("_AddRatingToMovie")]
+    partial class AddRatingToMovie
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,12 +30,12 @@ namespace MvcTemplate.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<string>("Rating")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("ReleaseDate")
-                        .HasColumnType("TEXT");
-                    
-                    b.Property<string>("Rating")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
